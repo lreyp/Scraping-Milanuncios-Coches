@@ -7,7 +7,7 @@ Esta práctica se ha realizado bajo el contexto de la asignatura _Tipología y c
 
 ## Miembros del equipo
 
-La actividad ha sido realizada por **Iván Maseda Zurdo** **Lucas Rey Pitaluga**.
+La actividad ha sido realizada por **Iván Maseda Zurdo** y **Lucas Rey Pitaluga**.
 
 ## Fichero del código fuente
 
