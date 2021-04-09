@@ -2,7 +2,7 @@
 
 ## Descripción
 
-En este repositorio pueden encontrar un archivo del lenguaje de programación Python que sirve como _scraper_ de la página web _milanuncios.com_. Además, hemos adjuntado un archivo _CSV_ con la extracción de los datos recogidos de coches de segunda mano, un archivo _txt_ que recopila los enlaces de cada anuncio, y un archivo _PDF_ que explica detalladamente el contenido de los datos extraídos.
+En este repositorio pueden encontrar un archivo del lenguaje de programación Python que sirve como _scraper_ de la página web _milanuncios.com_. Además, hemos adjuntado un archivo _CSV_ con la extracción de los datos recogidos de coches de segunda mano, un archivo _txt_ que recopila los enlaces de cada anuncio para evitar duplicar registros en futuras ejecuciones, y un archivo _PDF_ que explica detalladamente el contenido de los datos extraídos.
 Esta práctica se ha realizado bajo el contexto de la asignatura _Tipología y ciclo de vida de los datos_, perteneciente al Máster en Ciencia de Datos de la Universitat Oberta de Catalunya.
 
 ## Miembros del equipo
