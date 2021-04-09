@@ -31,43 +31,43 @@ def get_links(targetLinks, selectedDelay, browser):
     counter = 1
     
     try:
-        # closes the cookies box
+        # Acepta las cookies.
         WebDriverWait(browser, delay)\
             .until(EC.element_to_be_clickable((By.CSS_SELECTOR,
                                                'button.sui-AtomButton sui-AtomButton--primary sui-AtomButton--solid sui-AtomButton--center'.replace(' ', '.'))))\
             .click()
 
-        # selects 'Más filtros' drop down menu
+        # Selecciona "mas filtros" en el menu y hace click.
         WebDriverWait(browser, delay)\
             .until(EC.element_to_be_clickable((By.CSS_SELECTOR,
                                                'button.ma-ButtonBasic ma-ButtonBasic--secondary ma-FormListFilters-formToggleFiltersBtn ma-ButtonBasic--medium'.replace(' ', '.'))))\
             .click()
 
-        # selects 'Oferta y demanda' drop down menu
+        # Selecciona 'Oferta y demanda' en el menu.
         WebDriverWait(browser, delay)\
             .until(EC.element_to_be_clickable((By.CSS_SELECTOR,
                                                'div.sui-FormBuilder-field sui-FormBuilder-DefaultSelect sui-FormBuilder-demanda'.replace(' ', '.'))))\
             .click()
 
-        # selects 'Oferta' in the drop down menu
+        # Selecciona 'Oferta' en el menu desplegable.
         WebDriverWait(browser, delay)\
             .until(EC.element_to_be_clickable((By.XPATH,
                                                "//*[@id='app']/div/div/div/div/div/div/main/header/form/div/fieldset/div/div/div/div/div/ul/li/span[text()='Oferta']")))\
             .click()
     
-        # Select order by newest:
+        # Selecciona ordenas por en el menu.
         WebDriverWait(browser, delay)\
             .until(EC.element_to_be_clickable((By.CSS_SELECTOR,
                                                'div.sui-FormBuilder-field sui-FormBuilder-DefaultSelect sui-FormBuilder-orden'.replace(' ', '.'))))\
             .click()
     
-        # selects 'Ordenas por fecha' in the drop down menu
+        # Selecciona 'Ordenas por fecha' en el menu desplegable.
         WebDriverWait(browser, delay)\
             .until(EC.element_to_be_clickable((By.XPATH,
                                                "//*[@id='app']/div/div/div/div/div/div/main/header/form/div/fieldset/div/div/div/div/div/ul/li/span[text()='Ordenar por fecha']")))\
             .click()
 
-        # click on 'Ver xxx resultados'
+        # Click en 'Ver xxx resultados'.
         WebDriverWait(browser, delay)\
             .until(EC.element_to_be_clickable((By.CSS_SELECTOR,
                                                'button.ma-ButtonBasic ma-ButtonBasic--search ma-FormListFilters-formSubmitBtn ma-ButtonBasic--medium'.replace(' ', '.'))))\
@@ -76,7 +76,7 @@ def get_links(targetLinks, selectedDelay, browser):
         print("No es posible cargar la página de busqueda por ofertas")
 
 
-
+    # Utiliza la barra de desplazamiento por la  página hasta encontrar el botón siguiente.
     while (counter <= target_links):
         match = False
         error = True
@@ -94,7 +94,7 @@ def get_links(targetLinks, selectedDelay, browser):
                 continue
             time.sleep(1)
     
-        # gets link to each ad 
+        # guarda todos los enlaces de anuncios hasta el límite definido. 
         for i in browser.find_elements_by_xpath('//*[@id="app"]/div/div/div/div/div/div/main/div/article/div/div/div/h2/a'):
             if (counter<=targetLinks):
                 counter+=1
@@ -103,7 +103,7 @@ def get_links(targetLinks, selectedDelay, browser):
                 print("El proceso de obtención de links finalizado")
                 return links
         
-    
+        # En ocasiones aparece un elemento que puede provocar un error ElementClickInterceptedException, lo gesstionamos bajando la barra de desplazamiento:
         while error:
             try:
                 next_page.click()
@@ -137,7 +137,7 @@ def get_data(links, selectedDelay, csvFile, browser):
             count+=1
             browser_link = browser.get(url)
             
-            #
+            # Si quisieramos hacer que la barra de desplazamiento se moviera hasta el final en cada enlace, simulando un comportamiento mas humano, podríamos este código:
             #lenOfPage = browser.execute_script("window.scrollTo(0, document.body.scrollHeight);var lenOfPage=document.body.scrollHeight;return lenOfPage;")
             #match=False
             
