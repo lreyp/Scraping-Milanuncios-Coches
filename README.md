@@ -2,7 +2,7 @@
 
 ## Descripción
 
-En este repositorio pueden encontrar un archivo del lenguaje de programación Python que sirve como _scraper_ de la página web _milanuncios.com_. Además, hemos adjuntado un archivo CSV con la extracción de los datos recogidos de coches de segunda mano, y un archivo PDF que explica detalladamente el contenido de los datos extraídos.
+En este repositorio pueden encontrar un archivo del lenguaje de programación Python que sirve como _scraper_ de la página web _milanuncios.com_. Además, hemos adjuntado un archivo _CSV_ con la extracción de los datos recogidos de coches de segunda mano, y un archivo _PDF_ que explica detalladamente el contenido de los datos extraídos.
 Esta práctica se ha realizado bajo el contexto de la asignatura _Tipología y ciclo de vida de los datos_, perteneciente al Máster en Ciencia de Datos de la Universitat Oberta de Catalunya.
 
 ## Miembros del equipo
@@ -11,7 +11,7 @@ La actividad ha sido realizada por **Iván Maseda Zurdo** y **Lucas Rey Pitaluga
 
 ## Fichero del código fuente
 
-**src/scraping_milanuncios.py**: este fichero contiene la carga de librerías, lanza el _scraper_ y genera el _dataset_ requerido.
+**src/scraping_milanuncios.py**: este fichero contiene la carga de librerías, lanza el _scraper_, genera el _dataset_ requerido y el fichero _txt_ con los enlaces recopilados.
 
 ## Bibliografía
 
